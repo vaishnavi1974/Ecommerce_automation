@@ -1,0 +1,111 @@
+package com.selenium.m1;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class Ecommerces {
+	@SuppressWarnings("deprecation")
+	@Test
+	public void opening() throws Exception{
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\Vaishnavi\\Downloads\\chromedriver_win32\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Actions action = new Actions(driver);
+	driver.get(" http://automationpractice.com/index.php");
+	driver.manage().window().maximize();
+	Thread.sleep(1000);
+	WebElement block_1=driver.findElement(By.xpath("//a[@title='Women']"));
+	action.moveToElement(block_1).perform();
+	WebElement ele = driver.findElement(By.xpath("//a[@title='Women']"));
+	action.moveToElement(ele).perform();
+	WebElement tshirtbtn=driver.findElement(By.partialLinkText("T-shirts"));
+	tshirtbtn.click();
+	String pg=driver.getTitle();
+	Assert.assertEquals(pg, "T-shirts - My Store");
+	Thread.sleep(1000);
+	WebElement block=driver.findElement(By.xpath("//*[@id='center_column']/ul/li[1]/div"));
+	action.moveToElement(block).perform();
+	Thread.sleep(2000);
+	WebElement more=driver.findElement(By.xpath("//*[@id='center_column']/ul/li[1]/div/div[2]/div[2]/a[2]/span"));
+	more.click();
+	Thread.sleep(1000);
+	WebElement increase=driver.findElement(By.xpath("//i[@class='icon-plus']"));
+	increase.click();
+	Thread.sleep(1000);
+	Select size=new Select(driver.findElement(By.name("group_1")));
+	size.selectByVisibleText("L");
+	Thread.sleep(1000);
+	WebElement color=driver.findElement(By.name("Blue"));
+	color.click();
+	Thread.sleep(1000);
+	WebElement add_cart=driver.findElement(By.name("Submit"));
+	add_cart.click();
+	String pg1=driver.getTitle();
+	Assert.assertEquals(pg1, "Faded Short Sleeve T-shirts - My Store");
+	Thread.sleep(1000);
+	//WebElement pro=driver.findElement(By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a"));
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	WebElement pro = driver.findElement(By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a"));
+	pro.click();
+	String pg2=driver.getTitle();
+	Assert.assertEquals(pg2, "Order - My Store");
+	Thread.sleep(1000);
+	WebElement proceed=driver.findElement(By.cssSelector("#center_column > p.cart_navigation.clearfix > a.button.btn.btn-default.standard-checkout.button-medium"));
+	proceed.click();
+	String pg3=driver.getTitle();
+	Assert.assertEquals(pg3, "Login - My Store");
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("//input[@id='email_create']")).sendKeys("automate1@yourlogo.com");
+	Thread.sleep(3000);
+	driver.findElement(By.xpath("//span[normalize-space()='Create an account']")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.id("id_gender2")).click();
+	Thread.sleep(2000);
+	driver.findElement(By.id("customer_firstname")).sendKeys("Vaishnavi");
+	Thread.sleep(2000);
+	driver.findElement(By.id("customer_lastname")).sendKeys("Venkatesh");
+	Thread.sleep(2000);
+	driver.findElement(By.id("passwd")).sendKeys("automate*123");
+	Thread.sleep(2000);
+	Select s1=new Select(driver.findElement(By.id("days")));
+	s1.selectByIndex(14);
+	Thread.sleep(1000);
+	Select s2=new Select(driver.findElement(By.id("months")));
+	s2.selectByIndex(4);
+	Thread.sleep(1000);
+	Select s3=new Select(driver.findElement(By.id("years")));
+	s3.selectByIndex(22);
+	Thread.sleep(1000);
+	driver.findElement(By.id("firstname")).sendKeys("Vaishnavi");
+	Thread.sleep(1000);
+	driver.findElement(By.id("lastname")).sendKeys("Venkatesh");
+	driver.findElement(By.id("company")).sendKeys("yourlogo");
+	Thread.sleep(1000);
+	driver.findElement(By.name("address1")).sendKeys("Dayanand Sagar College of Engineering");
+	driver.findElement(By.name("city")).sendKeys("Bangalore");
+	Select s4=new Select(driver.findElement(By.name("id_state")));
+	s4.selectByIndex(32);
+	Thread.sleep(1000);
+	driver.findElement(By.name("postcode")).sendKeys("560078");
+	Select s5=new Select(driver.findElement(By.name("id_country")));
+	s5.selectByIndex(2);
+	driver.findElement(By.name("phone_mobile")).sendKeys("9876543210");
+	driver.findElement(By.name("alias")).sendKeys("your logo");
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//span[normalize-space()='Register']")).click();
+	Thread.sleep(1000);
+	
+	
+	driver.close();
+	
+	
+	}
+	
+}//#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a
