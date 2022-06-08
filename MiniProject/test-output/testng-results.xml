@@ -2,25 +2,49 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15562" started-at="2022-06-08T06:56:53Z" finished-at="2022-06-08T06:57:08Z">
+  <suite name="Default suite" duration-ms="7830" started-at="2022-06-08T07:07:26Z" finished-at="2022-06-08T07:07:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15562" started-at="2022-06-08T06:56:53Z" finished-at="2022-06-08T06:57:08Z">
+    <test name="Default test" duration-ms="7830" started-at="2022-06-08T07:07:26Z" finished-at="2022-06-08T07:07:34Z">
       <class name="com.selenium.m1.Ecommerces">
-        <test-method status="FAIL" signature="opening()[pri:0, instance:com.selenium.m1.Ecommerces@4cf777e8]" name="opening" duration-ms="15535" started-at="2022-06-08T12:26:53Z" finished-at="2022-06-08T12:27:08Z">
-          <exception class="java.lang.AssertionError">
+        <test-method status="FAIL" signature="opening()[pri:0, instance:com.selenium.m1.Ecommerces@4cf777e8]" name="opening" duration-ms="7795" started-at="2022-06-08T12:37:26Z" finished-at="2022-06-08T12:37:34Z">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[expected [T-shirts - My Store] but found []]]>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'LAPTOP-9AFG13RK', ip: '192.168.29.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_331'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b67b60954653403b43ab4ae8345c1773, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\VAISHN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56605}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56605/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b67b60954653403b43ab4ae8345c1773]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [T-shirts - My Store] but found []
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.selenium.m1.Ecommerces.opening(Ecommerces.java:34)
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'LAPTOP-9AFG13RK', ip: '192.168.29.4', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_331'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b67b60954653403b43ab4ae8345c1773, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\VAISHN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56605}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56605/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b67b60954653403b43ab4ae8345c1773
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:993)
+	at com.selenium.m1.Ecommerces.opening(Ecommerces.java:25)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -48,7 +72,7 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- opening -->
